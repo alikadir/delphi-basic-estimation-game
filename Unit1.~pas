@@ -1,0 +1,79 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, jpeg, ExtCtrls, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Label2: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+puan,a:integer;
+sayi:real;
+begin
+                     begin
+                     puan:=2100;
+              label1.Caption:=inttostr(puan);
+                    Randomize;
+               sayi:=Random(0)+1000;
+              image1.Visible:=false;
+               image2.Visible:=false;
+                    end;
+        //---------------------------------
+label2.Caption:=floattostr(sayi);
+                  begin
+           a:=strtoint(edit1.text);
+
+         // 111111111111111111111111111111
+            if a<sayi then
+
+                 begin
+              image1.Visible:=true;
+              image1.Visible:=false;
+               puan:=puan-5;
+                  end;
+           //2222222222222222222222222222222
+
+           if a>sayi then
+               begin
+          puan:=puan-5;
+          image1.Visible:=false;
+          image2.Visible:=true;
+              end;
+       //33333333333333333333333333
+           if a=sayi then
+              begin
+           image1.Visible:=false;
+           image2.visible:=false;
+        showmessage('tebrikler sayiyi buldunuz');
+           puan:=puan+5;
+
+            end;
+
+end;
+label1.Caption:=inttostr(puan);
+end;
+
+end.
